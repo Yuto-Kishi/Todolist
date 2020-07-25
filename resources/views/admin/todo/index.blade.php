@@ -4,7 +4,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <h2>To Do List</h2>
+            <h2>+To Do List+</h2>
         </div>
         <div class="row">
             <div class="col-md-4">
@@ -13,7 +13,7 @@
             <div class="col-md-8">
                 <form action="{{ action('Admin\TodoController@index') }}" method="get">
                     <div class="form-group row">
-                        <label class="col-md-2">Title</label>
+                        <label class="col-md-2">Task name</label>
                         <div class="col-md-8">
                             <input type="text" class="form-control" name="cond_title" value={{ $cond_title }}>
                         </div>
@@ -32,10 +32,10 @@
                         <thead>
                             <tr>
                                 <th width="10%">ID</th>
-                                <th width="20%">Title</th>
-                                <th width="10%">Due date</th>
-                                <th width="10%">State</th>
-                                <th width="10%">Manuals</th>
+                                <th width="20%">To Do</th>
+                                <th width="10%">Deadline</th>
+                                <th width="10%">Status</th>
+                                <th width="10%">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -44,7 +44,7 @@
                                     <th>{{ $todo->id }}</th>
                                     <td>{{ str_limit($todo->title, 250) }}</td>
                                     <td>{{ str_limit($todo->due_date, 14) }}</td>
-                                    <td>{{ str_limit($todo->state, 20) }}</td>
+                                    <td>{{ str_limit($todo->state,20) }}</td>
                                     <td>
                                         <div>
                                             <a href="{{ action('Admin\TodoController@edit', ['id' => $todo->id]) }}">Edit</a>
@@ -54,6 +54,7 @@
                                         </div>
                                     </td>
                                 </tr>
+                                
                             @endforeach
                         </tbody>
                     </table>

@@ -15,28 +15,28 @@
                         </ul>
                     @endif
                     <div class="form-group row">
-                        <label class="col-md-2" for="title">Title</label>
+                        <label class="col-md-2" for="title">To Do</label>
                         <div class="col-md-10">
                             <input type="text" class="form-control" name="title" value="{{ $todo_form->title }}">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="due_date">Due date</label> 
+                        <label class="col-md-2" for="due_date">Deadline</label> 
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="due_date" value="{{ $todo_form->due_date }}">
+                            <input type="date" class="form-control" name="due_date" value="{{ $todo_form->due_date }}">
                         </div>
                     </div>
                     <div class="form-group row">
-             　　　    <label class ="col-md-2">state of progress</label>
+             　　　    <label class ="col-md-2">The Current Status</label>
              　　　    <div class="col-md-10">
-             　　　        <input type="radio" name="state" value="Complete">Compldeted{{ old('state') }}
-             　　　        <input type="radio" name="state" value="In Progress">In Progress{{ old('state') }}
-             　　　        <input type="radio" name="state" value="Untouched">Untouched{{ old('state') }}
+             　　　        <input type="radio" name="state" value="Done">Done{{ old('status') }}
+             　　　        <input type="radio" name="state" value="In Progress">In Progress{{ old('status') }}
+             　　　        <input type="radio" name="state" value="Untouched">Untouched{{ old('status') }}
              　　　    </div>
              　　　</div>
              　　　 <input type="hidden" name="id" value="{{$todo_form->id}} ">
                             {{ csrf_field() }}
-                            <input type="submit" class="btn btn-primary" value="Upload">
+                            <input type="submit" class="btn btn-primary" value="Upload+">
                         </div>
                     </div>
                 </form>

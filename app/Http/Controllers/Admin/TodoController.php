@@ -37,7 +37,7 @@ class TodoController extends Controller
          $cond_title = $request->cond_title;
          if ($cond_title != '') {
              
-             $posts = Todo::where('title', $cond_title)->get();
+             $posts = Todo::where('title','like','%'.$cond_title.'%')->get();
          } else {
              $posts = Todo::all();
          }
